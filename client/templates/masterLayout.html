@@ -1,0 +1,19 @@
+<template name="masterLayout">
+
+    {{> menu }}
+
+    <div class="container-fluid">
+        <div class="col-md-3">
+            {{#each menuItems}}
+                <a href="/{{activeApp}}/{{url}}" class="list-group-item {{isActivePath url}}">{{label}}</a>
+            {{/each}}
+        </div>
+
+        <div class="col-md-9">
+        {{> yield}}
+        </div>
+        
+    </div>
+
+</template>
+
