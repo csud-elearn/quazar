@@ -1,7 +1,6 @@
-
-Router.route('/quiz/list', {name: 'quizList', controller: 'QuizListController'});
-
-
-QuizListController = RouteController.extend({
-    template: 'quizList'
+QuizRoutes.route('/list', {
+  name: 'quizList',
+  action: function () {
+    BlazeLayout.render('masterLayout', {appContent: 'quizList'});
+  }
 });

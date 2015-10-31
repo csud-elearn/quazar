@@ -1,0 +1,34 @@
+<template name="courseTestAsciidoc">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Texte en AsciiDoc</h2>
+			{{> adocEditor }}
+
+		</div>
+		<div class="col-md-6">
+			<h2>Rendu du AsciiDoc</h2>
+			{{> adocRender}}
+		</div>
+	</div>
+</template>
+
+
+<template name="adocEditor">
+	<div class="editorWrapper">
+		{{> CodeMirror id="editor" name="adocEditor" options=editorOptions code=editorCode reactiveVar="adocCode"}}
+	</div>
+</template>
+
+<template name="adocRender">
+	<div class="adoc-render">
+
+		{{adocCode}}
+
+	</div>
+</template>
+
+
+<template name="asciidoc">
+	<h2 class="adoc-code">Rendu Asciidoc</h2>
+	{{Template.contentBlock}}
+</template>

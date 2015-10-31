@@ -1,0 +1,28 @@
+<template name="courseTestMd">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Texte en markdown</h2>
+			{{> mdEditor }}
+
+		</div>
+		<div class="col-md-6">
+			<h2>Rendu du markdown</h2>
+			{{> mdRender}}
+		</div>
+	</div>
+</template>
+
+
+<template name="mdEditor">
+	<div class="editorWrapper">
+		{{> CodeMirror id="editor" name="markdownEditor" options=editorOptions code=editorCode reactiveVar="mdCode"}}
+	</div>
+</template>
+
+<template name="mdRender">
+	<div class="md-render">
+		{{#markdown}}
+		{{mdCode}}
+		{{/markdown}}
+	</div>
+</template>

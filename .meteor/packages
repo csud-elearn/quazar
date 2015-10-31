@@ -19,8 +19,14 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 zal3wa:bootstrap-flatly
-iron:router
 aldeed:autoform
 aldeed:collection2
 ecwyne:mathjs
 zimme:active-route
+kadira:blaze-layout
+kadira:flow-router
+arillo:flow-router-helpers
+accounts-password
+ian:accounts-ui-bootstrap-3
+perak:codemirror
+perak:markdown

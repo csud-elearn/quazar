@@ -27,17 +27,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">{{projectName}}</a>
+      <a class="navbar-brand" href="{{pathFor 'home'}}">{{projectName}}</a>
     </div>
 </template>
 
 <template name="leftMenu">
   <ul class="nav navbar-nav">
     <li class="{{isActivePath regex='^/katex.*'}}">
-      {{#linkTo route='katex'}}KaTeX{{/linkTo}}
+      <a href="{{pathFor 'katexHome'}}">KaTeX</a>
     </li>
     <li class="{{isActivePath regex='^/quiz.*'}}">
-      {{#linkTo route='quiz'}}Quiz{{/linkTo}}
+      <a href="{{pathFor 'quizHome'}}">Quiz</a>
+    </li>
+    <li class="{{isActivePath regex='^/course.*'}}">
+      <a href="{{pathFor 'courseHome'}}">Cours</a>
     </li>
 
     {{> leftDropdown}}
@@ -75,7 +78,7 @@
 <template name="rightMenu">
   <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
-        {{> RightDropdown}}
+        {{> loginButtons}}
       </ul>
 </template>
 

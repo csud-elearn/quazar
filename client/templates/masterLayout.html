@@ -3,17 +3,45 @@
     {{> menu }}
 
     <div class="container-fluid">
-        <div class="col-md-3">
-            {{#each menuItems}}
-                <a href="/{{activeApp}}/{{url}}" class="list-group-item {{isActivePath url}}">{{label}}</a>
-            {{/each}}
-        </div>
 
-        <div class="col-md-9">
-        {{> yield}}
-        </div>
-        
+        <div class="row">
+
+            <div class="col-md-{{numCols.menu}} app-menu">
+                {{#with activeMenu }}
+                  {{> appMenu }}
+                {{/with}}
+            
+
+            </div>
+
+            <div class="col-md-{{numCols.app}} app-content">
+                {{> Template.dynamic template=appContent }}       
+            </div>
+
+     </div>
+
     </div>
 
 </template>
 
+<template name="appMenu">
+
+    {{! Ressources pour construire le menu
+
+        * http://seegatesite.com/create-simple-cool-sidebar-menu-with-bootstrap-3/
+        * http://bootsnipp.com/snippets/featured/side-menu-on-hover
+            - pas mal du tout
+
+    }}
+
+    <div class="list-group">
+
+        {{#each items}}
+            <a href="{{pathFor route}}" class="list-group-item">{{label}}</a>
+        {{/each}}
+
+    </div>
+    
+
+
+</template>

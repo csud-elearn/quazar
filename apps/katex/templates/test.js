@@ -1,7 +1,8 @@
 
+
 if ( Meteor.isClient ) {
     
-    Template.katex.events({
+    Template.katexHome.events({
         'keyup #expr-input': function (e, template) {
             e.preventDefault();
             var expr = $('#expr-input').val();
@@ -27,7 +28,7 @@ if ( Meteor.isClient ) {
         }
     });
 
-    Template.katex.helpers({
+    Template.katexHome.helpers({
 
     });
     
